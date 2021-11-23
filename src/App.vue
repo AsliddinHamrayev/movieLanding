@@ -1,32 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <main>
+    <div class="container">
+      <div class="main-content">
+        <Main />
+        
+        <New />
+
+        <Show />
+      </div>
     </div>
     <router-view />
-  </div>
+  </main>
 </template>
-
+<script>
+import Main from "./components/Main.vue";
+import New from "./components/New.vue";
+import Show from "./components/Show.vue";
+export default {
+  name: "app",
+  components: {
+    Main,
+    New,
+    Show,
+  },    
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main-content {
+  background-color: #1d1d1d;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: cornflowerblue;
 }
 </style>
